@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class BotC {
 
+    public abstract boolean isProtected();
+
     public abstract @NotNull String name();
 
     public abstract @NotNull String description();

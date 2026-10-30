@@ -1,10 +1,7 @@
 package com.boyninja1555.triggerclank;
 
 import com.boyninja1555.triggerclank.channelshit.Counting;
-import com.boyninja1555.triggerclank.commands.DownloadC;
-import com.boyninja1555.triggerclank.commands.GithubC;
-import com.boyninja1555.triggerclank.commands.HelpC;
-import com.boyninja1555.triggerclank.commands.InviteC;
+import com.boyninja1555.triggerclank.commands.*;
 import com.boyninja1555.triggerclank.lib.PersistentData;
 import com.boyninja1555.triggerclank.lib.RuntimeProperties;
 import net.dv8tion.jda.api.JDA;
@@ -21,18 +18,17 @@ public class Triggerclank extends ListenerAdapter {
         BotCommands.register(InviteC.class);
         BotCommands.register(DownloadC.class);
         BotCommands.register(GithubC.class);
+        BotCommands.register(SayC.class);
     }
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if (event.getAuthor().isBot()) return;
-        long channelId = event.getChannel().getIdLong();
-        if (channelId == RuntimeProperties.countingChannelId()) {
+        if (event.getChannel().getIdLong() == RuntimeProperties.countingChannelId()) {
             new Counting().onMessageReceived(event);
             return;
         }
 
-        if (channelId != RuntimeProperties.commandsChannelId()) return;
         BotCommands.handle(event);
     }
 

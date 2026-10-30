@@ -12,6 +12,11 @@ public class InviteC extends BotC {
     private final String[] linkTooltips = {"Main"};
 
     @Override
+    public boolean isProtected() {
+        return false;
+    }
+
+    @Override
     public @NotNull String name() {
         return "invite";
     }

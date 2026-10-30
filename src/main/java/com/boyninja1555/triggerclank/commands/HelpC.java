@@ -11,6 +11,11 @@ import java.util.List;
 public class HelpC extends BotC {
 
     @Override
+    public boolean isProtected() {
+        return false;
+    }
+
+    @Override
     public @NotNull String name() {
         return "help";
     }

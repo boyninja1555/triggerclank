@@ -9,6 +9,11 @@ import org.jetbrains.annotations.NotNull;
 public class GithubC extends BotC {
 
     @Override
+    public boolean isProtected() {
+        return false;
+    }
+
+    @Override
     public @NotNull String name() {
         return "github";
     }
