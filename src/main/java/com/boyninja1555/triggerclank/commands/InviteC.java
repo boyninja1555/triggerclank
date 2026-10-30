@@ -1,32 +1,33 @@
-package com.floorcrafting.discordbot.commands;
+package com.boyninja1555.triggerclank.commands;
 
-import com.floorcrafting.discordbot.BotCommands;
-import com.floorcrafting.discordbot.commands.lib.BotC;
+import com.boyninja1555.triggerclank.commands.lib.BotC;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HelpC extends BotC {
+public class InviteC extends BotC {
+    private final String[] links = {"https://discord.gg/yt78h3ypeX"};
+    private final String[] linkTooltips = {"Main"};
 
     @Override
     public @NotNull String name() {
-        return "help";
+        return "invite";
     }
 
     @Override
     public @NotNull String description() {
-        return "(This message) explains how to use commands provided by me! :D";
+        return "Our public invite links";
     }
 
     @Override
     public void execute(String[] args, MessageReceivedEvent event) {
         List<String> messageLines = new ArrayList<>();
-        messageLines.add("**] Command Help**");
+        messageLines.add("**] Invite Links**");
 
-        for (BotC command : BotCommands.asList())
-            messageLines.add("`!" + command.name() + "` — " + command.description());
+        for (int i = 0; i < links.length; i++)
+            messageLines.add(linkTooltips[i] + " — <" + links[i] + ">");
 
         event.getChannel().sendMessage(String.join("\n", messageLines)).queue();
     }

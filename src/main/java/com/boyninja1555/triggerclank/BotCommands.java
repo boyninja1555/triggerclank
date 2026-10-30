@@ -1,7 +1,7 @@
-package com.floorcrafting.discordbot;
+package com.boyninja1555.triggerclank;
 
-import com.floorcrafting.discordbot.commands.lib.BotC;
-import com.floorcrafting.discordbot.lib.ErrorHandler;
+import com.boyninja1555.triggerclank.commands.lib.BotC;
+import com.boyninja1555.triggerclank.lib.ErrorHandler;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.lang.reflect.InvocationTargetException;
@@ -19,7 +19,6 @@ public class BotCommands {
 
     public static void handle(MessageReceivedEvent event) {
         String rawMessage = event.getMessage().getContentRaw().strip();
-
         if (!rawMessage.startsWith("!")) return;
 
         rawMessage = rawMessage.split("!", 2)[1];

@@ -1,4 +1,4 @@
-package com.floorcrafting.discordbot.lib;
+package com.boyninja1555.triggerclank.lib;
 
 import org.jetbrains.annotations.Nullable;
 

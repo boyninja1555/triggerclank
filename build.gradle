@@ -4,7 +4,7 @@ plugins {
     id "com.gradleup.shadow" version "9.3.0"
 }
 
-group = "com.floorcrafting"
+group = "com.boyninja1555"
 version = "1"
 
 java {
@@ -24,7 +24,7 @@ dependencies {
 }
 
 application {
-    mainClass = "${group}.discordbot.Floorcrafty"
+    mainClass = "${group}.triggerclank.Triggerclank"
 }
 
 tasks.assemble.dependsOn(tasks.shadowJar)

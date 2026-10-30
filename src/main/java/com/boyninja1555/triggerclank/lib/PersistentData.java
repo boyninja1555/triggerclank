@@ -1,4 +1,4 @@
-package com.floorcrafting.discordbot.lib;
+package com.boyninja1555.triggerclank.lib;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,14 +24,13 @@ public class PersistentData {
     }
 
     public static void load() {
-        File file = new File(FILE_PATH);
-
+        var file = new File(FILE_PATH);
         if (!file.exists()) {
             save();
             return;
         }
 
-        try (FileInputStream in = new FileInputStream(file)) {
+        try (var in = new FileInputStream(file)) {
             properties.load(in);
         } catch (IOException ex) {
             ErrorHandler.error("Could not load database!", ex);
@@ -39,8 +38,8 @@ public class PersistentData {
     }
 
     public static void save() {
-        try (FileOutputStream out = new FileOutputStream(FILE_PATH)) {
-            properties.store(out, "Floorcrafty Bot Storage");
+        try (var out = new FileOutputStream(FILE_PATH)) {
+            properties.store(out, "Triggerclank Bot Storage");
         } catch (IOException ex) {
             ErrorHandler.error("Could not save database!", ex);
         }

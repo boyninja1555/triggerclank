@@ -1,4 +1,4 @@
-package com.floorcrafting.discordbot.commands.lib;
+package com.boyninja1555.triggerclank.commands.lib;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;

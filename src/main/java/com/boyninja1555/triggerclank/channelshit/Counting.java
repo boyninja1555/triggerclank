@@ -1,6 +1,6 @@
-package com.floorcrafting.discordbot.channelshit;
+package com.boyninja1555.triggerclank.channelshit;
 
-import com.floorcrafting.discordbot.lib.PersistentData;
+import com.boyninja1555.triggerclank.lib.PersistentData;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
